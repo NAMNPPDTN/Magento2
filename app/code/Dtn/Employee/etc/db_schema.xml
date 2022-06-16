@@ -1,0 +1,25 @@
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="employees" resource="default" engine="innodb" comment="Employee Table">
+        <column xsi:type="int" name="employee_id" padding="10" unsigned="true" nullable="false" identity="true" comment="ID"/>
+        <column xsi:type="varchar" name="employee_name" comment="Employee Name"/>
+        <column xsi:type="varchar" name="email" comment="Employee Email"/>
+        <column xsi:type="int" name="age" comment="Age"/>
+        <column xsi:type="varchar" name="address" comment="address"/>
+        <column xsi:type="int" name="phone" comment="Phone"/>
+        <column xsi:type="int" name="status" comment="Status"/>
+        <column xsi:type="int" name="department_id" comment="Department id"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="employee_id"/>
+        </constraint>
+        <index referenceId="MY_MODULE_EMPLOYEE_ID" indexType="btree">
+            <column name="employee_id"/>
+        </index>
+    </table>
+    <table name="departments" resource="default" engine="innodb" comment="Department Table">
+        <column xsi:type="int" name="department_id" padding="10" unsigned="true" nullable="false" identity="true" comment="ID"/>
+        <column xsi:type="varchar" name="department_name" comment="Department name"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="department_id"/>
+        </constraint>
+    </table>
+</schema>

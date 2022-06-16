@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Dtn_Employee::employee" title="Employee" module="Dtn_Employee" sortOrder="41" resource="Dtn_Employee::menu"/>
+        <add id="Dtn_Employee::parent" title="Employee" module="Dtn_Employee" sortOrder="10" resource="Dtn_Employee::menu" parent="Dtn_Employee::employee"/>
+        <add id="Dtn_Employee::post" title="Employee" module="Dtn_Employee" sortOrder="10" action="employee/employee/index" resource="Dtn_Employee::post" parent="Dtn_Employee::parent"/>
+        <add id="Dtn_Employee::department" title="Department" module="Dtn_Employee" sortOrder="20" parent="Dtn_Employee::parent" action="employee/department/index" resource="Dtn_Employee::parent"/>
+    </menu>
+</config>
