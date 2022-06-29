@@ -2,8 +2,8 @@
 
 namespace Dtn\Employee\Controller\Adminhtml\Department;
 
-use Magento\Framework\View\Result\PageFactory;
 use Magento\Backend\App\Action;
+use Magento\Framework\View\Result\PageFactory;
 
 class Index extends Action
 {

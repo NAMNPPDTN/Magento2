@@ -5,7 +5,7 @@
     </head>
     <body>
         <referenceContainer name="content">
-            <uiComponent name="department_employee_form" />
+            <uiComponent name="employee_department_form" />
         </referenceContainer>
     </body>
 </page>

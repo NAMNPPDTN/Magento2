@@ -16,7 +16,7 @@
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
             <argument name="collections" xsi:type="array">
-                <item name="employee_department_listing_data_source" xsi:type="string">employee_employee_collection</item>
+                <item name="employee_department_listing_data_source" xsi:type="string">employee_department_collection</item>
             </argument>
         </arguments>
     </type>

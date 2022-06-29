@@ -10,4 +10,5 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
     {
         $this->_init('Dtn\Employee\Model\Employee', 'Dtn\Employee\Model\ResourceModel\Employee');
     }
+
 }

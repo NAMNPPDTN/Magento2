@@ -1,5 +1,5 @@
 <?php
-namespace Dtn\Employee\Ui\Component\Listing\Grid\Column;
+namespace Dtn\Employee\Ui\Component\DepartmentListing\Grid\Column;
 
 use Magento\Framework\View\Element\UiComponent\ContextInterface;
 use Magento\Framework\View\Element\UiComponentFactory;
@@ -48,11 +48,11 @@ class Action extends Column
             foreach ($dataSource['data']['items'] as & $item) {
                 $item[$this->getData('name')] = [
                     'edit' => [
-                        'href' => $this->urlBuilder->getUrl('employee/employee/addnew', ['id' => $item['employee_id']]),
+                        'href' => $this->urlBuilder->getUrl('employee/department/addnew', ['id' => $item['department_id']]),
                         'label' => __('Edit')
                     ],
                     'delete' => [
-                        'href' => $this->urlBuilder->getUrl('employee/employee/delete', ['id' => $item['employee_id']]),
+                        'href' => $this->urlBuilder->getUrl('employee/department/delete', ['id' => $item['department_id']]),
                         'label' => __('Delete')
                     ],
                     'duplicate' => [

@@ -55,7 +55,7 @@
                 <param name="indexField" xsi:type="string">post_id</param>
             </storageConfig>
         </settings>
-        <aclResource>ViMagento_HelloWorld::listing</aclResource>
+        <aclResource>Dtn_Employee::listing</aclResource>
         <dataProvider class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider" name="employee_employee_listing_data_source">
             <settings>
                 <requestFieldName>id</requestFieldName>
@@ -109,9 +109,10 @@
             </settings>
         </column>
 
-        <column name="department_id" sortOrder="70">
+        <column name="department_id" class="Dtn\Employee\Ui\Component\EmployeeListing\Grid\Column\NameDepartmentAction" sortOrder="70">
             <settings>
                 <filter>text</filter>
+                <dataType>text</dataType>
                 <label translate="true">Department</label>
             </settings>
         </column>
@@ -132,7 +133,7 @@
             </settings>
         </column>
 
-        <actionsColumn name="actions" class="Dtn\Employee\Ui\Component\Listing\Grid\Column\Action">
+        <actionsColumn name="actions" class="Dtn\Employee\Ui\Component\EmployeeListing\Grid\Column\Action">
             <settings>
                 <indexField>employee_id</indexField>
             </settings>

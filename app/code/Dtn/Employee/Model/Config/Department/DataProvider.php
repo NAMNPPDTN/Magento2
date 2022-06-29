@@ -1,9 +1,8 @@
 <?php
 
-namespace Dtn\Employee\Model\Config;
+namespace Dtn\Employee\Model\Config\Department;
 
-use Dtn\Employee\Model\EmployeeFactory;
-use Dtn\Employee\Model\ResourceModel\Employee\CollectionFactory;
+use Dtn\Employee\Model\ResourceModel\Department\CollectionFactory;
 
 class DataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
 {
