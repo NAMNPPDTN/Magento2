@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @var \Dtn\Employee\Block\Department $block
+ */
+?>
+<!--show table employee-->
+<h3>
+    Department
+</h3>
+<table>
+    <thead>
+    <tr>
+        <th class="id">Id</th>
+        <th class="department">Department</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($block->getDepartment() as $key => $department): ?>
+        </tr>
+        <td><?php echo $department->getData('department_id') ?></td>
+        <td><?php echo $department->getData('department_name') ?></td>
+    <?php endforeach; ?>
+    </tbody>
+</table>
+</body>
+</html>

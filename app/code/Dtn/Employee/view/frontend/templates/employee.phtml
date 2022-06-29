@@ -1,0 +1,61 @@
+<?php
+
+/**
+ * @var \Dtn\Employee\Block\Employee $block
+ */
+?>
+<!--show table employee-->
+<h3>
+    Employee
+</h3>
+<table>
+    <thead>
+    <tr>
+        <th class="id">Id</th>
+        <th class="department">Department</th>
+        <th class="email">Email</th>
+        <th class="name">name</th>
+        <th class="phone">Phone</th>
+        <th class="address">Address</th>
+        <th class="age">Age</th>
+        <th class="status">Status</th>
+<!--        <th class="action">Action</th>-->
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($block->getEmployee() as $key => $employee): ?>
+        </tr>
+        <td><?php echo $employee->getData('employee_id') ?></td>
+        <?php foreach ($block->getDepartment() as $key => $department): ?>
+            <?php if ($employee->getData('department_id') == $department->getData('department_id')): ?>
+            <td>
+                <?php echo $department->getData('department_name') ?>
+            </td>
+        <?php endif; ?>
+        <?php endforeach; ?>
+        <td><?php echo $employee->getData('email') ?></td>
+        <td><?php echo $employee->getData('employee_name') ?></td>
+        <td><?php echo $employee->getData('phone') ?></td>
+        <td><?php echo $employee->getData('address') ?></td>
+        <td><?php echo $employee->getData('age') ?></td>
+        <?php if ($employee->getData('status') == 1) : ?>
+            <td><?php echo 'Actived' ?></td>
+        <?php else: ?>
+            <td><?php echo 'Disabled' ?></td>
+        <?php endif; ?>
+<!--        <td>-->
+<!--            <a class="action primary"-->
+<!--               href="--><?//= $block->getBaseUrl() . 'employee/employee/delete/id/' . $post['employee_id'] ?><!--">-->
+<!--                Delete-->
+<!--            </a>-->
+<!--            <a class="action primary"-->
+<!--               href="--><?//= $block->getBaseUrl() . 'employee/employee/edit/id/' . $post['employee_id'] ?><!--">-->
+<!--                Update-->
+<!--            </a>-->
+<!--        </td>-->
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>
+</body>
+</html>
