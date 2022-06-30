@@ -38,6 +38,40 @@ class Index extends \Magento\Framework\View\Element\Template
         $this->collectionFactory = $collectionFactory;
         parent::__construct($context);
     }
+    protected function _prepareLayout()
+    {
+        parent::_prepareLayout();
+        $this->pageConfig->getTitle()->set(__('Custom Pagination'));
+        if ($this->getCustomCollection()) {
+            $pager = $this->getLayout()->createBlock(
+                'Magento\Theme\Block\Html\Pager',
+                'custom.history.pager'
+            )->setAvailableLimit([1 => 1, 10 => 10, 15 => 15, 20 => 20])
+                ->setShowPerPage(true)->setCollection(
+                    $this->getCustomCollection()
+                );
+            $this->setChild('pager', $pager);
+            $this->getCustomCollection()->load();
+        }
+        return $this;
+    }
+
+    public function getCustomCollection()
+    {
+        $page = ($this->getRequest()->getParam('p')) ? $this->getRequest()->getParam('p') : 1;
+        $pageSize = ($this->getRequest()->getParam('limit')) ? $this->getRequest(
+
+        )->getParam('limit') : 1;
+        $collection = $this->employee->getCollection();
+        $collection->setPageSize($pageSize);
+        $collection->setCurPage($page);
+        return $collection;
+    }
+
+    public function getPagerHtml()
+    {
+        return $this->getChildHtml('pager');
+    }
 
     public function getEmployee()
     {

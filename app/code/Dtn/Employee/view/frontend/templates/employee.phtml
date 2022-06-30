@@ -4,6 +4,24 @@
  * @var \Dtn\Employee\Block\Employee $block
  */
 ?>
+<html>
+<body>
+<div id="custom-component" data-bind="scope:'customcomponent'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+    <script type="text/x-magento-init">
+    {
+        "#custom-component": {
+            "Magento_Ui/js/core/app": {
+               "components": {
+                    "customcomponent": {
+                        "component": "Dtn_Employee/js/custom-component2"
+                    }
+                }
+            }
+        }
+    }
+    </script>
+</div>
 <!--show table employee-->
 <h3>
     Employee
@@ -23,7 +41,7 @@
     </tr>
     </thead>
     <tbody>
-    <?php foreach ($block->getEmployee() as $key => $employee): ?>
+    <?php foreach ($block->getCustomCollection() as $key => $employee): ?>
         </tr>
         <td><?php echo $employee->getData('employee_id') ?></td>
         <?php foreach ($block->getDepartment() as $key => $department): ?>
@@ -57,5 +75,8 @@
     <?php endforeach; ?>
     </tbody>
 </table>
+<?php if ($block->getPagerHtml()): ?>
+    <div class="order-products-toolbar toolbar bottom"><?php echo $block->getPagerHtml(); ?></div>
+<?php endif ?>
 </body>
 </html>

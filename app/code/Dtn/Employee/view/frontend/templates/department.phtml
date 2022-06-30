@@ -23,5 +23,8 @@
     <?php endforeach; ?>
     </tbody>
 </table>
+<?php if ($block->getPagerHtml()): ?>
+    <div class="order-products-toolbar toolbar bottom"><?php echo $block->getPagerHtml(); ?></div>
+<?php endif ?>
 </body>
 </html>
