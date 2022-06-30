@@ -109,11 +109,12 @@
             </settings>
         </column>
 
-        <column name="department_id" class="Dtn\Employee\Ui\Component\EmployeeListing\Grid\Column\NameDepartmentAction" sortOrder="70">
+        <column name="department_id" component="Magento_Ui/js/grid/columns/select" sortOrder="70">
             <settings>
-                <filter>text</filter>
-                <dataType>text</dataType>
+                <filter>select</filter>
+                <dataType>select</dataType>
                 <label translate="true">Department</label>
+                <options class="Dtn\Employee\Model\Config\Employee\Department"/>
             </settings>
         </column>
 
